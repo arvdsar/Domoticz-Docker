@@ -57,5 +57,15 @@ RUN		git clone https://github.com/domoticz/domoticz.git dev-domoticz &&\
 		cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt &&\
 		make 
 
+COPY /dev-domoticz/ /opt/domoticz/
+WORKDIR /opt/domoticz
+
+RUN chmod +x ./domoticz
+VOLUME /config
+
+EXPOSE 8080
+
+ENTRYPOINT ["/opt/domoticz/domoticz", "-dbase", "/config/domoticz.db", "-log", "/config/domoticz.log"]
+CMD ["-www", "8080"]
 
 
