@@ -60,7 +60,13 @@ RUN		git clone https://github.com/domoticz/domoticz.git dev-domoticz &&\
 RUN 		apt-get install python3-pip &&\
 		pip3 install requests paramiko &&\
 		cd /dev-domoticz/plugins &&\
-		git clone https://github.com/d-EScape/Domoticz_iDetect.git iDetect
+		git clone https://github.com/d-EScape/Domoticz_iDetect.git iDetect &&\
+		git clone https://github.com/Xorfor/Domoticz-Pi-hole-Plugin.git &&\
+		git clone https://github.com/akamming/domoticz-coronadashboard.git &&\
+		git clone https://github.com/lolautruche/SurveillanceStationDomoticz.git &&\
+		git clone https://github.com/ycahome/MeteoAlarmEU.git &&\
+		git clone https://github.com/Xorfor/Domoticz-LastDutchEarthquake-Plugin.git
+
 
 
 RUN cd /
