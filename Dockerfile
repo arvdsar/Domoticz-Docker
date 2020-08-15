@@ -57,7 +57,7 @@ RUN		git clone https://github.com/domoticz/domoticz.git dev-domoticz &&\
 		cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt &&\
 		make 
 
-RUN 		apt-get install python3-pip &&\
+RUN 		apt-get install -yq python3-pip &&\
 		pip3 install requests paramiko &&\
 		cd /dev-domoticz/plugins &&\
 		git clone https://github.com/d-EScape/Domoticz_iDetect.git iDetect &&\
