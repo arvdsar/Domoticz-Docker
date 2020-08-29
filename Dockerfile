@@ -4,6 +4,7 @@ LABEL maintainer = "Alexander van der Sar"
 #based on the install steps described in Domoticz WiKi
 #OpenZwave v1.6 included
 #My purpose is to run this on my Synology NAS
+#Should run on my Intel NUC too.
 
 RUN apt-get update && apt-get install -yq \
 		make \
