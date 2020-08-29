@@ -47,6 +47,7 @@ RUN mkdir boost &&\
 
 RUN		git clone https://github.com/OpenZwave/open-zwave open-zwave-read-only &&\
 		cd open-zwave-read-only &&\
+		git reset --hard &&\
 		git pull &&\
 		make &&\
 		make install &&\
