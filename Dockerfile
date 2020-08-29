@@ -54,6 +54,7 @@ RUN		git clone https://github.com/OpenZwave/open-zwave open-zwave-read-only &&\
 
 RUN		git clone https://github.com/domoticz/domoticz.git dev-domoticz &&\
 		cd dev-domoticz &&\
+		git reset --hard &&\
 		git pull &&\
 		cmake -DCMAKE_BUILD_TYPE=Release CMakeLists.txt &&\
 		make 
