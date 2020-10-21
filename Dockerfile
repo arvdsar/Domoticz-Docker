@@ -68,8 +68,10 @@ RUN 		apt-get install -yq python3-pip &&\
 		git clone https://github.com/akamming/domoticz-coronadashboard.git &&\
 		git clone https://github.com/lolautruche/SurveillanceStationDomoticz.git &&\
 		git clone https://github.com/ycahome/MeteoAlarmEU.git &&\
-		git clone https://github.com/Xorfor/Domoticz-LastDutchEarthquake-Plugin.git
-
+		git clone https://github.com/Xorfor/Domoticz-LastDutchEarthquake-Plugin.git &&\
+		git clone https://github.com/mvzut/maxcube-Domoticz-plugin MaxCube &&\
+		git clone https://github.com/sincze/Domoticz-Growatt-Webserver-Plugin &&\
+		git clone https://github.com/enesbcs/Shelly_MQTT.git
 
 
 RUN cd /
