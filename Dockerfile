@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -yq \
 	 	git \
 	 	libcurl4-gnutls-dev \
 	 	libusb-dev \
+		libsqlite3-dev \
 	 	python3-dev \
 	 	zlib1g-dev \
 	 	libcereal-dev \
