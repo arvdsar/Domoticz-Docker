@@ -23,27 +23,28 @@ RUN apt-get update && apt-get install -yq \
 	 && \
 	 apt remove --purge --auto-remove cmake
 
-RUN 	wget https://github.com/Kitware/CMake/releases/download/v3.17.0/cmake-3.17.0.tar.gz && \
-		tar -xzvf cmake-3.17.0.tar.gz &&\
-		rm cmake-3.17.0.tar.gz &&\
-		cd cmake-3.17.0 &&\
-		./bootstrap &&\
-		make &&\
-		make install &&\
-		cd .. &&\
-		rm -Rf cmake-3.17.0 &&\
+
+RUN 		wget https://github.com/Kitware/CMake/releases/download/v3.19.3/cmake-3.19.3.tar.gz && \
+		tar -xzvf cmake-3.19.3.tar.gz && \
+		rm cmake-3.19.3.tar.gz && \
+		cd cmake-3.19.3 && \
+		./bootstrap && \
+		make && \
+		sudo make install && \
+		cd .. && \
+		rm -Rf cmake-3.19.3 && \
 		apt remove --purge --auto-remove libboost-dev libboost-thread-dev libboost-system-dev libboost-atomic-dev libboost-regex-dev libboost-chrono-dev
 
-RUN mkdir boost &&\
+RUN 		mkdir boost &&\
 		cd boost &&\
-		wget https://dl.bintray.com/boostorg/release/1.72.0/source/boost_1_72_0.tar.gz &&\
-		tar xfz boost_1_72_0.tar.gz &&\
-		cd boost_1_72_0/ &&\
+		wget https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.gz &&\
+		tar xfz boost_1_76_0.tar.gz &&\
+		cd boost_1_76_0/ &&\
 		./bootstrap.sh &&\
 		./b2 stage threading=multi link=static --with-thread --with-system &&\
-		./b2 install threading=multi link=static --with-thread --with-system &&\
+		sudo ./b2 install threading=multi link=static --with-thread --with-system &&\
 		cd ../../ &&\
-		rm -Rf boost/ 
+		rm -Rf boost/
 
 RUN		git clone https://github.com/OpenZwave/open-zwave open-zwave-read-only &&\
 		cd open-zwave-read-only &&\
