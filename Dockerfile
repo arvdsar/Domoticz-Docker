@@ -30,7 +30,7 @@ RUN 		wget https://github.com/Kitware/CMake/releases/download/v3.19.3/cmake-3.19
 		cd cmake-3.19.3 && \
 		./bootstrap && \
 		make && \
-		sudo make install && \
+		make install && \
 		cd .. && \
 		rm -Rf cmake-3.19.3 && \
 		apt remove --purge --auto-remove libboost-dev libboost-thread-dev libboost-system-dev libboost-atomic-dev libboost-regex-dev libboost-chrono-dev
@@ -42,7 +42,7 @@ RUN 		mkdir boost &&\
 		cd boost_1_76_0/ &&\
 		./bootstrap.sh &&\
 		./b2 stage threading=multi link=static --with-thread --with-system &&\
-		sudo ./b2 install threading=multi link=static --with-thread --with-system &&\
+		./b2 install threading=multi link=static --with-thread --with-system &&\
 		cd ../../ &&\
 		rm -Rf boost/
 
